@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { Eta } = require("eta");
-const { watch } = require("gulp");
+const { watch, series } = require("gulp");
 const { Marked } = require("marked");
 const concat = require("concat-files");
 
@@ -94,6 +94,8 @@ function concatScripts(cb) {
     // Gulp.
     cb();
 }
+
+exports.build = series(renderHtmlFiles, copyAssets, concatScripts);
 
 exports.default = function () {
     renderHtmlFiles(() => {});
