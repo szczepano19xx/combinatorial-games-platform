@@ -1,0 +1,64 @@
+<% layout("./layout.html") %>
+
+<h1 class="mb-3"><%= it.title %></h1>
+
+<%~ it.authors %>
+
+<div class="container-fluid mb-3">
+    <div class="row bg-body-tertiary">
+        <div class="col p-3">
+            <div class="game-container p-3"><div id="game"></div></div>
+            <div id="gameHistoryNavigation" class="mt-3 text-center d-none">
+                <a href="#" onclick="restoreFirstTurn()" class="btn btn-dark"><i class="ri-rewind-fill"></i></a>
+                <a href="#" onclick="restorePreviousTurn()" class="btn btn-dark"><i class="ri-skip-back-fill"></i></a>
+                <a href="#" onclick="restoreNextTurn()" class="btn btn-dark"><i class="ri-skip-forward-fill"></i></a>
+                <a href="#" onclick="restoreLastTurn()" class="btn btn-dark"><i class="ri-speed-fill"></i></a>
+            </div>
+        </div>
+        <div class="col p-3 ps-0">
+            <div class="alert alert-light mb-2 d-none">
+                <small>Aktualny gracz (<span id="currentTurn"></span> tura):</small>
+                <br /><strong id="currentPlayerName"></strong>
+            </div>
+            <div class="alert alert-success mb-2 d-none" id="gameOverNotification">
+                Gra została <strong>zakończona</strong>.<br />
+                Zwycięzcą jest <strong id="winnerName"></strong>.
+            </div>
+            <div class="form-floating mb-2">
+                <select id="player1" class="form-select"></select>
+                <label id="player1TrueName" for="player1">Gracz 1:</label>
+            </div>
+            <div class="form-floating mb-2">
+                <select id="player2" class="form-select"></select>
+                <label id="player2TrueName" for="player2">Gracz 2:</label>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-dark btn-lg" id="startButton">Start</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav>
+    <div class="nav nav-tabs mb-3">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabDescription" type="button" role="tab">
+            Opis i zasady gry
+        </button>
+        <button
+            class="nav-link"
+            id="tabHistoryButton"
+            data-bs-toggle="tab"
+            data-bs-target="#tabHistory"
+            type="button"
+            role="tab"
+        >
+            Przebieg gry
+        </button>
+    </div>
+</nav>
+<div class="tab-content">
+    <div class="tab-pane active" id="tabDescription"><%~ it.description %></div>
+    <div class="tab-pane" id="tabHistory"></div>
+</div>
+
+<script src="js/<%= it.name %>/game.js"></script>
