@@ -1,6 +1,3 @@
-const boardWidth = 8;
-const boardHeight = 8;
-
 const logicOfGame = {
     /**
      * Generuje stan początkowy gry.
