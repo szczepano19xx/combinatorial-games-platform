@@ -5,6 +5,8 @@ zaliczeniowego na przedmiocie _Wprowadzenie do teorii gier_.
 
 ## Uruchomienie aplikacji we własnym środowisku
 
+Uwaga! Proszę stosować _node.js_ w wersji co najmniej 16.
+
 1. Pobranie repozytorium.
 2. Uruchomienie komendy `npm install`.
 3. Uruchomienie komendy `npx gulp`, która powinna uruchomić proces budowania przystosowany do dalszego rozwoju.
