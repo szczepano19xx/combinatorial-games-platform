@@ -1,3 +1,4 @@
 {
-    "title": "Joust"
+    "title": "Joust",
+    "extraJsFiles": ["extra.js"]
 }

@@ -41,4 +41,16 @@ wczytujemy ze ścieżki `../../images/nazwa gry/nazwa pliku obrazka`.
 W celu wizualizacji planszy można użyć również pliku `game.css`.
 
 Do dyspozycji są biblioteki [Bootstrap 5.3.2](https://getbootstrap.com/), [JQuery 3.7.1](https://jquery.com/) oraz
-[JQUery UI 1.13.2](https://jqueryui.com/).
+[JQuery UI 1.13.2](https://jqueryui.com/).
+
+## Dodatkowe pliki JavaScript
+
+Istnieje możliwość dodania kolejnych plików JavaScript do skryptu gry. Dodatkowe pliki
+należy dodać do pliku `config.json` jako tablica plików o kluczu `extraJsFiles`. Dodatkowe pliki muszą znaleźć się w katalogu `js` w katalogu gry.
+
+```
+{
+    "title": "Template",
+    "extraJsFiles": ["extra.js"]
+}
+```
